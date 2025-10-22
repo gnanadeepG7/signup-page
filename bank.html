@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CUB Dropdown Menu</title>
+
+  <style>
+   
+    a.header-text-decoration { 
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 15px;
+      padding: 10px;
+    }
+    a.header-text-decoration:hover,
+    a.header-text-decoration.active {
+      background-color: #0d6efd;
+      color: white;
+    }
+
+    /* Dropdown modal */
+    .custom-modal {
+      display: none;
+      position: absolute;
+      top: 45px;
+      width: 100vw;
+      background: white;
+      padding: 25px;
+    }
+
+    .custom-modal.show {
+      display: block;
+    }
+
+    /* Card layout */
+    .custom-modal-content {
+      display: grid;
+      grid-template-columns: repeat(4, 250px);
+     padding-left: 290px;
+      gap: 20px 30px;
+    }
+
+    /* Row break */
+    .custom-row-break {
+      grid-column: 1 / -1;
+    }
+
+    /* Card design */
+    .custom-card {
+      width: 250px;
+      height: 300px;
+      background: #f8f9fa;
+    }
+
+    .custom-card h5 {
+      background-color: #0d6efd;
+      color: white;
+      margin: 0;
+      padding: 10px;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .custom-card ul {
+      list-style: none;
+    }
+  </style>
+</head>
+<body>
+
+  <ul class="navbar" style="list-style-type: none;">
+    <li>
+      <a href="#" id="personal_Menu" class="header-text-decoration">Personal</a>
+    </li>
+  </ul>
+
+  <!-- Dropdown Modal -->
+  <div class="custom-modal" id="personal_Modal">
+    <div class="custom-modal-content">
+
+      <!-- Row 1 (4 cards) -->
+      <div class="custom-card">
+        <h5>Open Bank Accounts</h5>
+        <ul >
+          <li>General Savings Account</li>
+          <li>Salary Account</li>
+          <li>Basic Savings</li>
+          <li>Children Account</li>
+          <li>Student Account</li>
+          <li>PMJDY Account</li>
+        </ul>
+      </div>
+
+      <div class="custom-card">
+        <h5>Loans</h5>
+        <ul>
+          <li>Personal Loan</li>
+          <li>Gold Loan</li>
+          <li>Home Loan</li>
+          <li>Education Loan</li>
+          <li>Vehicle Loan</li>
+          <li>Consumer Loan</li>
+        </ul>
+      </div>
+
+      <div class="custom-card">
+        <h5>Deposits</h5>
+        <ul>
+          <li>Fixed Deposit</li>
+          <li>Recurring Deposit</li>
+          <li>Flexi Deposit</li>
+          <li>Tax Saver Deposit</li>
+        </ul>
+      </div>
+
+      <div class="custom-card">
+        <h5>Payments</h5>
+        <ul>
+          <li>Online Taxes</li>
+          <li>Electricity Bill</li>
+          <li>Water Bill</li>
+          <li>Insurance Payment</li>
+        </ul>
+      </div>
+
+      <div class="custom-row-break"></div>
+
+      <!-- Row 2 (3 cards) -->
+      <div class="custom-card">
+        <h5>Tech Products</h5>
+        <ul>
+          <li>Net Banking</li>
+          <li>Mobile App</li>
+          <li>Digital Locker</li>
+        </ul>
+      </div>
+
+      <div class="custom-card">
+        <h5>Cards</h5>
+        <ul>
+          <li>Debit Card</li>
+          <li>Credit Card</li>
+          <li>Prepaid Card</li>
+        </ul>
+      </div>
+
+      <div class="custom-card">
+        <h5>Insurance</h5>
+        <ul>
+          <li>Health Insurance</li>
+          <li>Life Insurance</li>
+          <li>Travel Insurance</li>
+          <li>Motor Insurance</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const menu = document.getElementById("personal_Menu");
+    const modal = document.getElementById("personal_Modal");
+
+    // Show modal immediately on hover
+    menu.addEventListener("mouseenter", () => {
+      modal.classList.add("show");
+      menu.classList.add("active");
+    });
+
+    // Hide modal immediately when leaving
+    menu.addEventListener("mouseleave", () => {
+      if (!modal.matches(":hover")) {
+        modal.classList.remove("show");
+        menu.classList.remove("active");
+      }
+    });
+
+    modal.addEventListener("mouseenter", () => {
+      modal.classList.add("show");
+      menu.classList.add("active");
+    });
+
+    modal.addEventListener("mouseleave", () => {
+      modal.classList.remove("show");
+      menu.classList.remove("active");
+    });
+  </script>
+
+</body>
+</html>

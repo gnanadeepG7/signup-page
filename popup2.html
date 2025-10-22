@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background-color: blanchedalmond;
+        }
+
+        #main-cont {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            display: none;
+        }
+
+        #div-cont {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: bisque;
+            width: 400px;
+            height: 350px;
+            border-radius: 20px;
+            box-shadow: 2px 2px 10px rgb(30, 46, 48);
+            padding-top: 5px;
+        }
+
+        #input-text,
+        #input-password {
+            border-radius: 5px;
+            width: 150px;
+            padding: 5px;
+        }
+
+        p {
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        #btn {
+            padding: 8px;
+            margin-left: 50px;
+            border-radius: 5px;
+            width: 70px;
+            font-weight: bold;
+        }
+
+        #btn:hover {
+            background-color: lightskyblue;
+            color: aliceblue;
+        }
+
+        @media (max-width: 480px) {
+            #div-cont {
+                width: 100%;
+                height: auto;
+                padding: 20px;
+                border-radius: 10px;
+            }
+
+            #input-text,
+            #input-password {
+                width: 100%;
+            }
+
+            #btn {
+                width: 100%;
+                margin-left: 0;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body id="bg">
+    <button id="popupBtn">click me</button>
+    <div id="main-cont">
+        <div id="div-cont">
+            <form id="loginForm" >
+                <h1>Login</h1>
+                <input type="email" placeholder="enter email" id="input-text" required onblur="validateEmail()">
+                <p id="errortext"></p>
+                <br>
+                <input type="password" placeholder="enter password" id="input-password" required onblur="validatePassword()">
+                <p id="errorpassword"></p>
+                <a href="">
+                    <p>forgot password</p>
+                </a>
+                <br>
+                <input type="button" value="submit" id="btn" onclick="handleSubmit()">
+                <p>not have an account ?<a href="">create account</a> </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let input1 = document.getElementById("input-text");
+        let input2 = document.getElementById("input-password");
+        let errortext = document.getElementById("errortext");
+        let errorpassword = document.getElementById("errorpassword");
+        // Email 
+        function validateEmail() {
+            let email = input1.value;
+           
+            if (email === "") {
+                errortext.innerText = "Email is required";
+                errortext.style.color = "red";
+                input1.style.borderColor = "red";
+            } else {
+                if (email.endsWith("@gmail.com")) {
+                    errortext.innerText = "Valid";
+                    errortext.style.color = "green";
+                    input1.style.borderColor = "green";
+                } else {
+                    errortext.innerText = "Only Gmail addresses allowed";
+                    errortext.style.color = "red";
+                    input1.style.borderColor = "red";
+                }
+            }
+        }
+
+        // Password 
+        function validatePassword() {
+            let pwd = input2.value;
+            errorpassword.innerText = "";
+            input2.style.borderColor = "";
+            if (pwd === "") {
+                errorpassword.innerText = "Password is required";
+                errorpassword.style.color = "red";
+                input2.style.borderColor = "red";
+            } else {
+                if (pwd.length >= 8) {
+                    errorpassword.innerText = "Valid";
+                    errorpassword.style.color = "green";
+                    input2.style.borderColor = "green";
+                } else {
+                    errorpassword.innerText = "Password must be at least 8 characters";
+                    errorpassword.style.color = "red";
+                    input2.style.borderColor = "red";
+                }
+            }
+        }
+        // Submit  both are data valid
+        function handleSubmit() {
+            let email = input1.value;
+            let pwd = input2.value;
+            // Email 
+            if (email === "") {
+                errortext.innerText = "Email is required";
+                errortext.style.color = "red";
+                input1.style.borderColor = "red";
+            } else {
+                if (email.endsWith("@gmail.com")) {
+                    errortext.innerText = "Valid";
+                    errortext.style.color = "green";
+                    input1.style.borderColor = "green";
+                    emailOk = "ok";
+                } else {
+                    errortext.innerText = "Only Gmail addresses allowed";
+                    errortext.style.color = "red";
+                    input1.style.borderColor = "red";
+                }
+            }
+
+            // Password 
+            if (pwd === "") {
+                errorpassword.innerText = "Password is required";
+                errorpassword.style.color = "red";
+                input2.style.borderColor = "red";
+            } else {
+                if (pwd.length >= 8) {
+                    errorpassword.innerText = "Valid";
+                    errorpassword.style.color = "green";
+                    input2.style.borderColor = "green";
+                    pwdOk = "ok";
+                } else {
+                    errorpassword.innerText = "Password must be at least 8 characters";
+                    errorpassword.style.color = "red";
+                    input2.style.borderColor = "red";
+                }
+            }
+
+            // Only if both are ok
+            if (emailOk === "ok" && pwdOk === "ok") {
+                alert("Login successful!");
+                cont.style.display = 'none';
+                bg.style.backgroundColor = "blanchedalmond";
+                document.getElementById("loginForm").reset();
+            }
+        }
+        let popupBtn = document.getElementById('popupBtn');
+        let cont = document.getElementById('main-cont');
+        let btn = document.getElementById('btn');
+        let bg = document.getElementById('bg');
+
+
+        // Open popup 
+        popupBtn.addEventListener('click', function () {
+            cont.style.display = 'flex';
+            bg.style.backgroundColor = "black";
+        });
+
+        //  clicking outside the form
+        cont.addEventListener('click', function (e) {
+            if (e.target === cont) {
+                cont.style.display = 'none';
+                bg.style.backgroundColor = "blanchedalmond";
+            }
+        });
+    </script>
+</body>
+</html>

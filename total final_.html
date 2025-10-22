@@ -1,0 +1,544 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap Layout</title>
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+   <style>
+     .header-img
+      {
+        width: 100%;
+        height: 64px;
+      }
+      .header-text-decoration
+    {
+      text-decoration: none;
+      color: rgb(15, 16, 16);
+      font-size: 12px;  
+    }   
+    .header-text-scrolling
+    {
+        width: 70%;
+    }
+    
+    .text-decoration-footer
+    {
+      text-decoration: none;
+      color: lightcyan;
+      font-size: 12px;  
+    }
+    .text-footer-headings
+    {
+       text-decoration: none;
+      color: lightcyan;
+    }
+    .text-color
+    {
+      color: rgb(207, 51, 110);
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .logos
+    {
+      height: 20px;
+      width: 20px;
+    }
+   
+    .img-qrlogo
+    {
+      width: 150px;
+      height: 150px;
+    }
+      .header-text-decoration:hover
+      {
+        color: blue;
+      }
+
+      
+      
+      
+        
+   </style>
+</head>
+<body>
+<!-- header section    -->
+  <header>
+  <div class="container-fluid align-items-stretch mt-0 ms-0">
+    <div class="row">
+      <!-- Column 1 -->
+      <div class="col-3 px-0" >
+        <img src="CUB-New-logo.jpg" alt="" class="header-img">
+      </div>
+
+      <!-- Column 2 & 3  -->
+      <div class="col ">
+        <div class="row">
+          <div class="col-12 bg-primary border-bottom-5 text-white d-flex " style="height: 50%;flex-wrap: wrap ;">
+            <div class="header-text-scrolling"><marquee behavior="" direction="">Dear Customer,we hava launched Video KYC facility fir New customer to open saving account at the convernience of the their home.click here for instant Account Opening.</marquee> </div>
+          </div>
+          <div class="col-12 bg-light text-dark d-flex justify-content-around" style="height: 50%;flex-wrap: wrap;">
+            <ul class="list-unstyled d-flex">
+          <li><a href="#" class="header-text-decoration">&nbsp;Home </a>|</li>
+          <li><a href="#" class="header-text-decoration">&nbsp;Credit Card </a>|</li>
+          <li><a href="#" class="header-text-decoration">&nbsp;Personal  </a>|</li>
+          <li><a href="#" class="header-text-decoration">&nbsp;Gold Lone </a>|</li>
+          <li><a href="#" class="header-text-decoration"> &nbsp;MSME </a>|</li>
+          <li><a href="#" class="header-text-decoration">&nbsp;Corporate </a>|</li>
+          <li><a href="#" class="header-text-decoration">&nbsp;Agri & Rural </a>|</li>
+          <li><a href="#" class="header-text-decoration">&nbsp;NRI </a>|</li>
+          <li><a href="#" class="header-text-decoration" id="techBankingMenu">&nbsp;Tech Banking  </a>|</li>
+          <li><a href="#" class="header-text-decoration">&nbsp; Academic Instituction  </a>|</li>
+          <li><a href="#" class="header-text-decoration">&nbsp;Offers </a>|</li>
+          <li><a href="#" class="header-text-decoration">&nbsp;Grievance </a>|</li>
+          <li><a href="#" class="header-text-decoration">Career </a>|</li>
+        </ul>
+        <a href=""><button type="button" class="btn btn-light px-2">LOGIN</button></a> 
+        <a href=""> <img src="whatsapp.png"  style="width: 30px; height: 30px;" alt=""> </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div ><h2 ><b class="row align-items-center justify-content-center bg-light p-3 ">Cyber Security Tips</b></h2>
+    </div>
+  </div>
+</header>
+
+   
+
+<div class="container-fluid  align-items-stretch pt-0">
+    <div class="row"><img src="CJD_1920 x 600 px main.jpg" alt="file not found">
+    </div>
+</div>
+<div>   
+</div>
+<!-- cards sections  -->
+ <!-- card section-1 -->
+<section>
+  <div class="container-fluid pt-5">
+    <div class="row justify-content-evenly text-center">
+
+      <!-- Card 1 -->
+      <div class="col-md-3 d-flex flex-column align-items-stretch mb-4">
+        <div class="card ">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">cub personal banking</h6>
+            <p class="card-text">Saving Loans, Deposit and Services <br>Instant Support Online & Offline</p>
+            <img src="pic1.jpg" alt="Personal Banking" class="img-fluid rounded mb-3" style="width: 100%;">
+            <button class="btn btn-primary mt-auto w-100">Learn More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-3 d-flex flex-column align-items-stretch mb-4">
+        <div class="card ">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">CUB Gold Loans</h6>
+            <p class="card-text">At best and low interest rates <br>Instant disbursement of money</p>
+            <img src="pic2.jpg" alt="Gold Loans" class="img-fluid rounded mb-3" style="width: 100%;">
+            <button class="btn btn-primary mt-auto w-100">Learn More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-3 d-flex flex-column align-items-stretch mb-4">
+        <div class="card ">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">CUB Insta Loans</h6>
+            <p class="card-text">Apply instantly for consumer loan in <br>few minutes with CUB’s insta loan portal</p>
+            <img src="img3.jpg" alt="Insta Loans" class="img-fluid rounded mb-3" style="width: 100%;">
+            <button class="btn btn-primary mt-auto w-100">Learn More</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div class="pt-5">
+    <div class="container bg-danger"  `>
+      <hr>
+    </div>
+  </div>
+</section>
+<!-- card section-2  -->
+ <section>
+  <div class="container-fluid pt-5">
+    <div class="row justify-content-evenly text-center">
+
+      <!-- Card 1 -->
+      <div class="col-md-3 d-flex flex-column align-items-stretch mb-4">
+        <div class="card ">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">CUB Corporate Banking</h6>
+            <p class="card-text">Experience Ease of Business.<br>Customized services and dedicated support.</p>
+            <img src="img-4.jpg" alt="Personal Banking" class="img-fluid rounded mb-3" style="width: 100%;">
+            <button class="btn btn-primary mt-auto w-100">Learn More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-3 d-flex flex-column align-items-stretch mb-4">
+        <div class="card ">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">CUB Agri Loans</h6>
+            <p class="card-text">Loans for Buying Cattle, Farm Equipments <br>Irrigation system and Agriculture needs</p>
+            <img src="img-5.jpg" alt="Gold Loans" class="img-fluid rounded mb-3" style="width: 100%;">
+            <button class="btn btn-primary mt-auto w-100">Learn More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-3 d-flex flex-column align-items-stretch mb-4">
+        <div class="card ">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">MSME</h6>
+            <p class="card-text">Make Your Business Dreams a reality. <br>Working Capital and Services from CUB.</p>
+            <img src="img-6.jpg" alt="Insta Loans" class="img-fluid rounded mb-3" style="width: 100%;">
+            <button class="btn btn-primary mt-auto w-100">Learn More</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!--  Card Divider -->
+  <div class="pt-5">
+    <div class="container bg-danger">
+      <hr>
+    </div>
+  </div>
+</section>
+
+<!-- Card Section card-3 -->
+ <section>
+  <div class="container-fluid pt-5">
+    <div class="row justify-content-evenly text-center">
+
+      <!-- Card 1 -->
+      <div class="col-md-3 d-flex flex-column align-items-stretch mb-4">
+        <div class="card ">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">CUB NRI Account</h6>
+            <p class="card-text">Wide Range of Benefits. Freedom <br>of operating from across the world</p>
+            <img src="img-7.jpg" alt="Personal Banking" class="img-fluid rounded mb-3" style="width: 100%;">
+            <button class="btn btn-primary mt-auto w-100">Learn More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-3 d-flex flex-column align-items-stretch mb-4">
+        <div class="card ">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Academic Institutions</h6>
+            <p class="card-text">Fee Collection to Salary Disbursement. <br>Fast and Efficient Online Services.</p>
+            <img src="img-8.jpg" alt="Gold Loans" class="img-fluid rounded mb-3" style="width: 100%;">
+            <button class="btn btn-primary mt-auto w-100">Learn More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-3 d-flex flex-column align-items-stretch mb-4">
+        <div class="card ">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Tech Banking</h6>
+            <p class="card-text">Online Banking, Demat, Wealth Management <br>Point of Sale, FASTag, Soverign Gold Bond etc.</p>
+            <img src="img-9.jpg" alt="Insta Loans" class="img-fluid rounded mb-3" style="width: 100%;">
+            <button class="btn btn-primary mt-auto w-100">Learn More</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div class="pt-5">
+    <div class="container bg-danger">
+      <hr>
+    </div>
+  </div>
+</section>
+
+
+
+   <!-- logo & Scanner section -->
+  <section>
+    <div class="container-fluid mt-2">
+      <div class="row">
+       <div class="col text-center">
+        <div class="pt-3"><b >CITY UNION BANK is registered with DICGC Click here</b>
+        </div><br>
+          <img src="DICGC-logo.png" alt="" class="img-qrlogo">
+          <img src="DICGC-qr.png" alt="" class="img-qrlogo">
+       </div>
+      </div>
+    </div>
+  </section>
+    <div>
+      <div class="container bg-danger "><hr>
+    </div>
+  </div>
+<!-- footer section -->
+<div class="pt-2">
+<footer class="bg-dark text-light pt-3">
+  <div class="container ">
+    <div class="row">
+      <div class="col-sm-4">
+        <h5 > <a href="#" class="text-footer-headings">About Us</a></h6><br>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-decoration-footer">Know Our Directors</a></li>
+          <li><a href="#" class="text-decoration-footer">Know Our Executives</a></li>
+          <li><a href="#" class="text-decoration-footer">CUB History</a></li>
+          <li><a href="#" class="text-decoration-footer">Contact Us</a></li><br>
+        </ul>
+        <h6> <a href="#"class="text-footer-headings">Policy And Regulatory Disclosure</a></h6><br>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-decoration-footer">Basel II & III Disclosure</a></li>
+          <li><a href="#" class="text-decoration-footer">Caution To Public On Fictitious Cheap Funds</a></li>
+          <li><a href="#" class="text-decoration-footer">Inoperative Accounts / Unclaimed Deposits</a></li>
+          <li><a href="#" class="text-decoration-footer">Policies</a></li>
+          <li><a href="#" class="text-decoration-footer">MSME Policy</a></li>
+          <li><a href="#" class="text-decoration-footer">Regulator Notifications</a></li>
+          <li><a href="#" class="text-decoration-footer">Code of Bank’s Commitment To MSME</a></li>
+          <li><a href="#" class="text-decoration-footer">Privacy Policy</a></li>
+          <li><a href="#" class="text-decoration-footer">Bancassurance</a></li>
+          <li><a href="#" class="text-decoration-footer">Important Message SEBI/NSDL</a></li>
+          <li><a href="#" class="text-decoration-footer">PMRY Subsidy Pending</a></li>
+          <li><a href="#" class="text-decoration-footer">Code of Bank’s Commitment To Customers (English)</a></li>
+          <li><a href="#" class="text-decoration-footer">Code of Bank’s Commitment To Customers (Hindi)</a></li>
+          <li><a href="#" class="text-decoration-footer">LCR and NSFR</a></li>
+
+        </ul>
+      </div>
+     
+      
+      <div class="col-sm-4"> 
+        <h5 > <a href="#" class="text-footer-headings">Complaints and Grievances</a></h6><br>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-decoration-footer">Ombudsman Scheme</a></li>
+          <li><a href="#" class="text-decoration-footer">Customer Education Series</a></li>
+          <li><a href="#" class="text-decoration-footer">Grievance</a></li>
+          <li><a href="#" class="text-decoration-footer">Complaints And Its Analysis</a></li>
+          <li><a href="#" class="text-decoration-footer">Submission of PAN</a></li>
+              <br>
+        </ul>
+        <h6> <a href="#" class="text-footer-headings">media relations</a></h6><br>
+        <ul class="list-unstyled">
+          <li><a href="#"class="text-decoration-footer">Press Release </a></li>
+          <li><a href="#"class="text-decoration-footer">CUB In News</a></li>
+          <li><a href="#"class="text-decoration-footer">Awards & Recognitions</a></li>
+          <li><a href="#"class="text-decoration-footer">Gallery</a></li>
+          <li><a href="#"class="text-decoration-footer">Form Center</a></li>
+        </ul>
+         <h5 > <a href="#" class="text-footer-headings">Investor Relations</a></h6><br>
+          <h5 > <a href="#" class="text-footer-headings">Auction Sale</a></h6><br>
+      </div>
+      
+      <div class="col-sm-4">
+        <h5 > <a href="" class="text-footer-headings">Important Links</a></h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-light tex text-decoration-none">Terms & Conditions</a></li>
+          <li><a href="#" class="text-decoration-footer">Security Alert</a></li>
+          <li><a href="#" class="text-decoration-footer">Careers</a></li>
+          <li><a href="#" class="text-decoration-footer">FAQs</a></li>
+          <li><a href="#" class="text-decoration-footer">ATM Card/Net Banking Reset</a></li>
+        </ul>
+        <ul class="list-unstyled">
+           
+          <li><a href="#" class="text-decoration-footer">Disclaimer</a></li>
+          <li><a href="#" class="text-decoration-footer">Terms And Conditions</a></li>
+          <li><a href="#" class="text-decoration-footer">Security Alert</a></li>
+          <li><a href="#" class="text-decoration-footer">Careers</a></li>
+          <li><a href="#" class="text-decoration-footer">RUPAY / VISA / MASTER</a></li>
+          <li><a href="#" class="text-decoration-footer">PMMY</a></li>
+          <li><a href="#" class="text-decoration-footer">Interest Rates And Charges</a></li>
+          <li><a href="#" class="text-decoration-footer">FAQs & Demo</a></li>
+          <li><a href="#" class="text-decoration-footer">Important Notice</a></li>
+          <li><a href="#" class="text-decoration-footer">Aadhar Enrollment Center</a></li>
+          <li><a href="#" class="text-decoration-footer">Foreign Exchange Rates</a></li>
+          <li><a href="#" class="text-decoration-footer">Positive Pay System</a></li>
+          <li><a href="#" class="text-decoration-footer">Financial Awareness</a></li>
+          <li><a href="#" class="text-decoration-footer">Business Continuity Plan</a></li>
+          <li><a href="#" class="text-decoration-footer">Subsidy Received Under CLCS Scheme</a></li>
+          <li><a href="#" class="text-decoration-footer">Financial Literacy Week</a></li>
+          <li><a href="#" class="text-decoration-footer">Re-Kyc</a></li>
+          <li><a href="#" class="text-decoration-footer">Debit card E-mandate</a></li>
+          <li><a href="#" class="text-decoration-footer">Consumer Education - SMA/NPA</a></li>
+          <li><a href="#" class="text-decoration-footer">Security Awareness</a></li>
+          <li><a href="#" class="text-decoration-footer">Customer Survey</a></li>
+          <li><a href="#" class="text-decoration-footer">E- Learning Management System(E-LMS) - National</a></li>
+          <li><a href="#" class="text-decoration-footer">FAQs</a>Centre for Financial Education (NCFE)</li><br>
+          
+        </ul>
+        <h6><a href=""class="text-footer-headings">ATM Card / Net Banking / Mobile Banking PIN Reset</a></h6><br>
+        <h6><a href=""class="text-footer-headings">Secured Assets possessed under the SARFAESI Act, 2002</a></h6>
+      </div>
+    </div>
+   
+  </div>
+
+
+</footer>
+ <div class="container-fluid mt-2">
+    <div class="row">
+      <div class="col text-center">
+       <small class="fw-bold wt fs-5"> A distinct bank for all your need.<small class=" text-color">Anywhere...Anytime...</small>
+      </div>
+    </div>
+ </div>
+
+
+  <div class="container-fluid mt-3">
+    <div class="row">
+      
+           <span class="col text-center ">
+            <a href=""><img src="fb.png" alt="" class="logos"></a>&nbsp;
+             <a href=""><img src="twitter.png" alt="" class="logos"></a>&nbsp;
+             <a href=""><img src="Instagram.png" alt="" class="logos"></a>&nbsp;
+            <a href=""><img src="youtubes.png" alt="" class="logos"></a> &nbsp;
+             <a href=""><img src="Apple-logo.png" alt="" class="logos"></a>&nbsp;
+             <a href=""><img src="play-store.png" alt="" class="logos"></a>&nbsp;
+           </span>
+    </div>
+  </div>
+    
+
+
+<div class="container-fluid mt-1 pt-1 pb-2 bg-primary text-white">
+    <div class="row">
+      <div class="col text-center">
+       <small class="fw-bold" style="font-size: 12px;">© 2025 City Union Bank |All Rights Reserved.</small>
+      </div>
+    </div>
+</div>
+<!-- check -->
+
+<div class="modal fade" id="techBankingModal" >
+  <div class="modal-dialog">
+    
+         
+            <div class="container-fluid">
+    <div class="row ">
+      <!-- Column 1 -->
+      <div class="col-3">
+        <div class="card menu-card">
+          <div class="menu-header">Banking Options</div>
+          <ul class="menu-list">
+            <li>CUB Net banking / Online banking</li>
+            <li>CUB All in One Mobile banking</li>
+            <li>Security Features in Internet and Mobile Banking</li>
+          </ul>
+        </div>
+        <div class="card menu-card">
+          <div class="menu-header">Self Service Banking</div>
+          <ul class="menu-list">
+            <li>CUB Kiosk Services</li>
+            <li>CUB Lakshmi — Multilingual Chatbot</li>
+            <li>CUB Branch Locator</li>
+            <li>Locate CUB Branches / ATM on Map</li>
+            <li>Locate CUB Self Service Branches</li>
+            <li>CUB ATM Locator</li>
+            <li>Locate CUB BNAs (Cash deposit machines)</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Column 2 -->
+      <div class="col-3">
+        <div class="card menu-card">
+          <div class="menu-header">Tech Products & Services</div>
+          <ul class="menu-list">
+            <li>CUB BHIM UPI</li>
+            <li>CUB Sovereign Gold Bond</li>
+            <li>CUB Credit Cards / Prepaid Cards for individuals</li>
+            <li>CUB FASTag</li>
+            <li>CUB Credit Cards for individuals</li>
+            <li>Set or Reset CUB Card Limits</li>
+            <li>Green Pin</li>
+            <li>CUB Electronic Fund Transfer</li>
+          </ul>
+        </div>
+        <div class="card menu-card">
+          <div class="menu-header">Support Services</div>
+          <ul class="menu-list">
+            <li>CUB Safe Deposit Locker Facility</li>
+            <li>Download CUB Application, Safety Forms</li>
+            <li>CUB value added services</li>
+            <li>CUB Form downloads / Service Requests</li>
+            <li>Account Aggregator</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Column 3 -->
+      <div class="col-3">
+        <div class="card menu-card">
+          <div class="menu-header">Tech Products & Services</div>
+          <ul class="menu-list">
+            <li>CUB Wallet</li>
+            <li>CUB ATM / BNA Facility — Withdraw or Deposit Cash Easily</li>
+            <li>CUB Point of Sale (POS) — Collect card payments easily</li>
+            <li>CUB Cash Management Solutions</li>
+            <li>CUB Bharat QR for UPI Payments</li>
+            <li>CUB ASBA Facility</li>
+            <li>CUB WhatsApp banking</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Column 4 -->
+      <div class="col-3">
+        <div class="card menu-card">
+          <div class="menu-header">Tech Products & Services</div>
+          <ul class="menu-list">
+            <li>CUB Demat Services</li>
+            <li>CUB Wealth Management</li>
+            <li>Bill Payment</li>
+            <li>GST Payment</li>
+            <li>TAX Payment</li>
+            <li>Digital Signature — Hard / Soft</li>
+            <li>Loan Against Securities (LAS)</li>
+            <li>Credit Line On UPI</li>
+            <li>UPI Circle — Delegate Payments</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+         
+  </div>                               
+</div>
+
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const techMenu = document.getElementById('techBankingMenu');
+  const techModal = new bootstrap.Modal(document.getElementById('techBankingModal'));
+
+  // Show modal on mouseenter, hide on mouseleave               
+  techMenu.addEventListener('mouseenter', () => {
+    techModal.show();
+  });                                   
+
+  // Optional: Hide modal when mouse leaves the modal or menu
+  document.getElementById('techBankingModal').addEventListener('mouseleave', () => {
+    techModal.hide();
+  });
+
+</script>
+
+  
+</body>
+</html>
+<style>  /* newwwwwwwwwwwwwwwwwwwwwwww */

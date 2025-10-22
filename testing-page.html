@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hover Dropdown Grid (No Button)</title>
+    <style>
+      /* Container for hover trigger */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        margin-left: 20px;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        padding-top: 0px;
+        padding-left: 100px;
+      }
+      /* Show dropdown on hover and apply grid layout */
+      .dropdown:hover .dropdown-content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 10px;
+      }
+      .dropdown-item {
+        width: 200px;
+        height: 200px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .card-head-text {
+        font-size: 13px;
+        font-weight: bold;
+        color:white;
+        padding: 8px;
+        background-color: rgb(27, 157, 201);
+      }
+      .card-body-text {
+        font-size: 11px;
+      padding-top: 5px;
+        padding-left: 7px;
+        list-style-type: none;
+        margin-top: 0px;
+       
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dropdown">
+      <!-- 1 -->
+      <h5 class="dropdown-trigger">home</h5>
+      <div class="dropdown-content">
+        <div class="dropdown-item">
+          <div class="card-head-text">CUB Credit Cards</div>
+          <ul class="card-body-text">
+            <li>Apply CSK Cridit Card</li>
+            <li>Apply SRH Cridit Card</li>
+            <li>Manage CSK/ SRH Cridit Card</li>
+            <li>CSK/SRH Quick Payment Link</li>
+            <li>Manage CSK SRH Reward Points</li>
+          </ul>
+        </div>
+        
+
+        <div class="dropdown-item">
+          <div class="card-head-text">CUB Debit Cards</div>
+          <ul class="card-body-text">
+            <li>Apply CUB Debit Card</li>
+            <li>Manage CUB Debit Card</li>
+            <li>CUB Debit Card Limit Enhancement</li>
+            <li>Block CUB Debit Card</li>
+            <li>Request for CUB Debit Card PIN</li>
+          </ul>
+        </div>
+        <div class="dropdown-item">
+          <div class="card-head-text">CUB FASTag</div>
+          <ul class="card-body-text">
+            <li>Apply CUB FASTag</li>
+            <li>Manage CUB FASTag</li>
+            <li>Recharge CUB FASTag</li>
+            <li>Block CUB FASTag</li>
+            <li>Download CUB FASTag App</li>
+          </ul>
+        </div>
+        <div class="dropdown-item">
+          <div class="card-head-text">CUB Digital Banking</div>
+          <ul class="card-body-text">
+            <li>Apply CUB Digital Banking</li>
+            <li>Manage CUB Digital Banking</li>
+            <li>Download CUB Mobile Banking App</li>
+            <li>Download CUB Internet Banking App</li>
+            <li>Request for CUB Digital Banking Password</li>
+          </ul>
+        </div>
+        <div class="dropdown-item">
+          <div class="card-head-text">Item 6</div>
+          <div class="card-body-text">Content for Item 6</div>
+        </div>
+        <div class="dropdown-item">
+          <div class="card-head-text">Item 7</div>
+          <div class="card-body-text">Content for Item 7</div>
+        </div>
+         <div class="dropdown-item">
+          <div class="card-head-text">Item 7</div>
+          <div class="card-body-text">Content for Item 7</div>
+        </div>
+        <div class="dropdown-item">
+          <div class="card-head-text">Item 8</div>
+          <div class="card-body-text">Content for Item 8</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
