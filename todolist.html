@@ -3,27 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>todo-list</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+        }
+        #btn {
+            padding: 10px 20px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;   
+            background-color: #877b63;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-left: 250px;
+            box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.2)  ;
+        }
+        #btn:hover {
+            background-color: #356e60;
+        }
+        /* popup styles ----------------------------*/
+        #popup-container {   
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            display: none;
+        }
+        #popup-body {
+        background-color: #dfe3ba;
+            padding: 20px;
+            box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            width: 300px;
+           
+        }
+        input,textarea {
+          
+            padding: 10px;
+            width: 300px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+             margin-bottom: 20px;
+        }
+        #sunmit-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;   
+            background-color: #b1ada4;
+            color: white;
+            border-radius: 5px;
+           
+            box-shadow: 2px 2px 20px  rgba(29, 1, 1, 0.2)  ;
+            margin-left:100px;
+        }
+        #sunmit-btn:hover {
+            background-color: #23d3a7;
+           box-shadow: 0px 1px 5px rgb(15, 3, 28);
+        }
+        label {
+            font-weight: bold;
+            padding: 3px;
+           
+        }
+          
+
+
+    </style>
 </head>
 <body>
-    
-    <input type="text" id="input-text" placeholder="enter text">
-    <button id="btn">Add</button>
-    <ul id="todo-list"></ul>
-    <script>
-        const inputText = document.getElementById('input-text');
-        const btn = document.getElementById('btn');
-        const todoList = document.getElementById('todo-list');
+    <button id="btn">Add person</button>
+   <table>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>DOB</th>
+        <th>Email</th>
+        <th>Comments</th>
+        <th>Actions</th>
+    </tr>
+     </table>
+<div id="popup-container">
+<div id="popup-body">
+    <form action="">
+      <label for="name">*Name:</label>  <input type="text" id="name" placeholder="Name"  required ><br>
+      <label for="age">*Age:</label>  <input type="number" id="age" placeholder="Age"  required ><br>
+      <label for="dob">*DOB:</label>  <input type="date" id="dob" placeholder="DOB"  required ><br>
+      <label for="email">*Email:</label>  <input type="email" id="email" placeholder="Email"  required ><br>
+      <label for="comments">Comments:</label>  <textarea id="comments" placeholder="Comments" ></textarea><br>
+        <button type="submit" id="sunmit-btn">Submit</button>   
+    </form>
+</div>
+   </div>
+    <script >
+    const btn = document.getElementById('btn'); 
+    const popupContainer = document.getElementById('popup-container');
+    const popupBody = document.getElementById('popup-body');
 
-        btn.addEventListener('click', () => {
-            const inputValue = inputText.value;
-            if (inputValue) {
-                const p  = document.createElement('p');
-                p.textContent = inputValue;
-                localStorage.setItem('todoItem', inputValue);
-                todoList.appendChild(p);
-            }
-        });
+    btn.addEventListener('click', function () {
+        popupContainer.style.display = 'flex';
+    }); 
+    popupContainer.addEventListener('click', (function(e) {
+        if (e.target === popupContainer) {
+            popupContainer.style.display = 'none';
+        }
+    }) );
     </script>
+
+  
 </body>
 </html>
