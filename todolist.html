@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="input-text" placeholder="enter text">
+    <button id="btn">Add</button>
+    <ul id="todo-list"></ul>
+    <script>
+        const inputText = document.getElementById('input-text');
+        const btn = document.getElementById('btn');
+        const todoList = document.getElementById('todo-list');
+
+        btn.addEventListener('click', () => {
+            const inputValue = inputText.value;
+            if (inputValue) {
+                const p  = document.createElement('p');
+                p.textContent = inputValue;
+                localStorage.setItem('todoItem', inputValue);
+                todoList.appendChild(p);
+            }
+        });
+    </script>
+</body>
+</html>
