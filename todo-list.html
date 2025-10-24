@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>todo-list</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
     <style>
         /* table */
         table, th, td {
@@ -75,14 +77,20 @@
             padding: 3px;
            
         }
-          
-
-
+      
+        #icon {
+            float: right;
+            cursor: pointer;
+        
+        }   
+        #icon:hover {
+            color: rgb(172, 53, 53);
+        }
     </style>
 </head>
 <body>
     <button id="btn">Add person</button>
-   <table>
+   <table id="table">
     <tr>
         <th>Name</th>
         <th>Age</th>
@@ -95,7 +103,9 @@
 <div id="popup-container">
 <div id="popup-body">
     <form action="">
-      <label for="name">*Name:</label>  <input type="text" id="name" placeholder="Name"  required ><br>
+        <i class="fa-solid fa-square-xmark" id="icon"></i><br>
+      <label for="Fname">*FName:</label>  <input type="text" id="fname" placeholder="Name"  required ><br>
+      <label for="lname">*LName:</label>  <input type="text" id="lname" placeholder="Name"  required ><br>   
       <label for="age">*Age:</label>  <input type="number" id="age" placeholder="Age"  required ><br>
       <label for="dob">*DOB:</label>  <input type="date" id="dob" placeholder="DOB"  required ><br>
       <label for="email">*Email:</label>  <input type="email" id="email" placeholder="Email"  required ><br>
@@ -105,9 +115,9 @@
 </div>
    </div>
     <script >
-    const btn = document.getElementById('btn'); 
-    const popupContainer = document.getElementById('popup-container');
-    const popupBody = document.getElementById('popup-body');
+    let btn = document.getElementById('btn'); 
+    let popupContainer = document.getElementById('popup-container');
+    let popupBody = document.getElementById('popup-body');
 
     btn.addEventListener('click', function () {
         popupContainer.style.display = 'flex';
@@ -117,9 +127,89 @@
             popupContainer.style.display = 'none';
         }
     }) );
-    </script>
+    let closeIcon = document.getElementById('icon');
+    closeIcon.addEventListener('click', function() {
+        popupContainer.style.display = 'none';
+    }); 
 
-  
+
+
+   //crud operations
+    let submitBtn = document.getElementById('sunmit-btn');
+    let table = document.getElementById('table');
+
+
+
+     let fname1 = document.getElementById('fname')
+        let lname1 = document.getElementById('lname')
+        let age1 = document.getElementById('age')
+        let dob1 = document.getElementById('dob')
+        let email1 = document.getElementById('email')
+        let comments1 = document.getElementById('comments')
+        
+       
+
+    submitBtn.addEventListener('click', function() {
+       
+        let fname = fname1.value;
+        let lname = lname1.value;
+        let age = age1.value;
+        let dob = dob1.value;
+        let email = email1.value;
+        let comments = comments1.value;
+        let newRow = table.insertRow();
+        newRow.innerHTML = `
+            <td>${fname} ${lname}</td>
+            <td>${age}</td>
+            <td>${dob}</td>
+            <td>${email}</td>
+            <td>${comments}</td>
+            <td>
+               <div style="display: flex; gap: 5px;" >
+                 <p class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></p>
+                   <p class="delete-btn"><i class="fa-solid fa-trash-can"></i></p>
+                  
+               </div>
+            </td>
+        `;
+        let user= {
+            name:fname+lname,
+            age:age,
+            dob:dob,
+            email:email,
+            comments:comments
+        }
+        localStorage.setItem('newRow',JSON.stringify(user))
+
+        popupContainer.style.display = 'none';
+        document.querySelector('form').reset();
+
+       let editBtn = newRow.getElementsByClassName('edit-btn')[0];
+       let deleteBtn = newRow.getElementsByClassName('delete-btn')[0];
+
+        // Delete functionality
+        deleteBtn.addEventListener('click', function() {
+            if(confirm('Are you sure you want to delete this entry?')) {
+                table.deleteRow(newRow.rowIndex);
+            }      
+        });
+        // Edit functionality
+        editBtn.addEventListener('click', function() {
+         fname1.value=fname;
+        lname1.value=lname;
+         age1.value=age;
+         dob1.value=dob;            
+         email1.value=email;
+        comments1.value=comments;
+
+            popupContainer.style.display = 'flex';
+            table.deleteRow(newRow.rowIndex);
+        });
+    });
+    
+
+</script>
+
 </body>
 
-</html>
+</html>    
