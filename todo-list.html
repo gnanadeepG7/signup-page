@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,57 +8,83 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
 
     <style>
-        /* table ------------ */
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
+        #body-container
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-        th, td {
-            padding: 10px;
-        }
+        /* table---------------- */
+       table {
+      width: 1000px;           
+      border-collapse: collapse;
+      table-layout: fixed;      
+      border: 1px solid #000;
+    }
+
+    th, td {
+      border: 1px solid #000;
+      padding: 5px;
+      text-align: left; 
+      word-wrap: break-word;     
+
+    }
+    th{
+       
+       text-align: center;
+       background-color: #23d3a7;
+    }
         #btn {
             padding: 10px 20px;
-            margin-bottom: 10px;
-            font-size: 16px;
+           margin-bottom: 15PX;
+            font-size: 20px;
             cursor: pointer;
             border: none;   
-            background-color: #dda73a;
+            background-color: #877b63;
             color: white;
             border-radius: 5px;
-            transition:0.3s;
-            margin-left: 450px;
-            box-shadow: 2px 2px 10px  rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+            margin-left: 857px;
+            box-shadow: 2px 2px 10px rgba(25, 25, 25, 0.2)  ;
         }
         #btn:hover {
-            background-color: #aa6955;
-            box-shadow: 1PX 2PX 5PX rgb(36, 33, 33);
-            color: bisque;
+            background-color: #356e60;
         }
-        /* popup form------------ */
+        /* popup ----------------------------*/
         #popup-container {   
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100vh;
             display: none;
+           
         }
         #popup-body {
-            background-color: #dfe3ba;
+        background-color: #d8e8ec;
             padding: 20px;
-            box-shadow: 1PX 2PX 5PX rgb(36, 33, 33);
-           border-radius: 10px;
+             box-shadow: 0px 1px 5px rgb(15, 3, 28);
+            border-radius: 10px;
             width: 300px;  
         }
         input,textarea {
+          
             padding: 10px;
             width: 300px;
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 5px;
-            margin-bottom: 20px;
-            cursor: pointer;
-            outline: 0px;
-            box-shadow: 1PX 2PX 5PX rgb(147, 169, 10);
+             margin-bottom: 20px;
+             outline: 0px;
+             cursor: pointer;
+            
+        }
+        input:hover{
+             box-shadow: 1px 2px 10px rgb(43, 37, 116);
+        }
+        textarea:hover{
+            box-shadow: 1px 2px 10px rgb(43, 37, 116);
+            height: 100%
         }
         #sunmit-btn {
             padding: 10px 20px;
@@ -69,11 +94,11 @@
             background-color: #b1ada4;
             color: white;
             border-radius: 5px;
-            box-shadow: 2px 2px 20px rgba(29, 1, 1, 0.2);  
+            box-shadow: 2px 2px 20px  rgba(29, 1, 1, 0.2)  ;  
         }
         #sunmit-btn:hover {
             background-color: #23d3a7;
-            box-shadow: 0px 1px 5px rgb(15, 3, 28);
+           box-shadow: 0px 1px 5px rgb(15, 3, 28);
         }
         label {
             font-weight: bold;
@@ -86,135 +111,185 @@
         #icon:hover {
             color: rgb(172, 53, 53);
         }
+
+    
+        #error-msg {
+            display: none;
+            color: #7a0b0b;
+            padding: 8px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-weight:bold;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <!-- table -->
+    <div id="body-container">
     <button id="btn">Add person</button>
-    <table id="table">
-        <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>DOB</th>
-            <th>Email</th>
-            <th>Comments</th>
-            <th>Actions</th>
-        </tr>
-    </table>
-<!-- popup form -->
-    <div id="popup-container">
-        <div id="popup-body">
-            <form>
-                <i class="fa-solid fa-square-xmark" id="icon"></i><br>
-                <label for="Fname">*FName:</label> <input type="text" id="fname" placeholder="Name" required><br>
-                <label for="lname">*LName:</label><input type="text" id="lname" placeholder="Name" required><br>   
-                <label for="age">*Age:</label><input type="number" id="age" placeholder="Age" required><br>
-                <label for="dob">*DOB:</label><input type="date" id="dob" placeholder="DOB" required><br>
-                <label for="email">*Email:</label><input type="email" id="email" placeholder="Email" required><br>
-                <label for="comments">Comments:</label>  <textarea id="comments" placeholder="Comments"></textarea><br>
-                <input type="submit" id="sunmit-btn"> 
-            </form>
-        </div>
+   <table id="table">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>DOB</th>
+        <th>Email</th>
+        <th>Comments</th>
+        <th>Actions</th>
+    </tr>
+     </table>
+<div id="popup-container">
+<div id="popup-body">
+  
+    <form action="">
+      <i class="fa-solid fa-square-xmark" id="icon" title="Close"></i><br>
+        <p id="error-msg">Please fill all fields</p>
+      <label for="Fname">*FName:</label><input type="text" id="fname" placeholder="fname"   ><br>
+      <label for="lname">*LName:</label><input type="text" id="lname" placeholder="lname"   ><br>   
+      <label for="age">*Age:</label><input type="number" id="age" placeholder="Age" ><br>
+      <label for="dob">*DOB:</label><input type="date" id="dob" placeholder="DOB"  ><br>
+      <label for="email">*Email:</label><input type="email" id="email" placeholder="Email" ><br>
+      <label for="comments">Comments:</label><textarea id="comments" placeholder="Comments" ></textarea><br>
+        <input type="submit" id="sunmit-btn"> 
+    </form>
+</div>
+   </div>
     </div>
 
-    <script>
-        let btn = document.getElementById('btn'); 
-        let popupContainer = document.getElementById('popup-container');
-        let submitBtn = document.getElementById('sunmit-btn');
-        let table = document.getElementById('table');
+<script>
+let btn = document.getElementById('btn'); 
+let popupContainer = document.getElementById('popup-container');
+let popupBody = document.getElementById('popup-body');
+let table = document.getElementById('table');
+let form = document.querySelector('form');
 
-        // Open popup-----------------
-        btn.addEventListener('click', function () {
-            popupContainer.style.display = 'flex';
-        }); 
-        // Close popup on outside click-0-------------------
-        popupContainer.addEventListener('click', function(e) {
-            if (e.target === popupContainer) {
-                popupContainer.style.display = 'none';
-            }
-        });
-        // Close icon click---------------------------
-        document.getElementById('icon').addEventListener('click', function() {
-            popupContainer.style.display = 'none';
-        }); 
-        // Load from localStorage---------------------
-        window.addEventListener('load', function() {
+let fname1 = document.getElementById('fname');
+let lname1 = document.getElementById('lname');
+let age1 = document.getElementById('age');
+let dob1 = document.getElementById('dob');
+let email1 = document.getElementById('email');
+let comments1 = document.getElementById('comments');
+
+let errorMsg = document.getElementById('error-msg');
+
+let editingIndex = null; 
+
+// open form for new entry------------------
+btn.addEventListener('click', function () {
+    errorMsg.style.display = 'none';
+    popupContainer.style.display = 'flex';
+}); 
+
+// remove outside-click close behavior so form only closes via close icon
+// (no click handler on popupContainer)
+
+// icon click close the form-------------------
+let closeIcon = document.getElementById('icon');
+closeIcon.addEventListener('click', function() {
+    popupContainer.style.display = 'none';
+    errorMsg.style.display = 'none';
+});
+
+function rTable(users) {
+    while (table.rows.length > 1) {
+        table.deleteRow(1);
+    }
+    users.forEach((user, idx) => addRowToTable(user, idx));
+}
+window.addEventListener('load', function() {
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+    rTable(users);
+});
+
+// submit form---------------------
+form.addEventListener('submit', function(e) {
+    e.preventDefault(); // prevent page reload
+
+    let fname = fname1.value.trim();
+    let lname = lname1.value.trim();
+    let age = age1.value.trim();
+    let dob = dob1.value;
+    let email = email1.value.trim();
+    let comments = comments1.value.trim();
+
+    if (fname === "" || lname === "" || age === "" || dob === "" || email === "") {
+        errorMsg.style.display = 'block';
+        return;
+    }
+    errorMsg.style.display = 'none';
+     // validate DOB is not in the future
+    const today = new Date();
+    const todayOnly = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    const dobDate = new Date(dob);
+    const dobOnly = new Date(dobDate.getFullYear(), dobDate.getMonth(), dobDate.getDate());
+
+    if (dobOnly > todayOnly) {
+        errorMsg.textContent = 'DOB cannot be in the future';
+        errorMsg.style.display = 'block';
+        return;
+    }
+
+    errorMsg.style.display = 'none';
+
+    let user = { fname, lname, age, dob, email, comments };
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+
+    if (editingIndex !== null) {
+        users[editingIndex] = user;
+    } else {
+        users.push(user);
+    }
+
+    localStorage.setItem('users', JSON.stringify(users));
+    rTable(users);
+    popupContainer.style.display = 'none';
+    form.reset();
+    editingIndex = null;
+});
+//add data from html table--------------------
+function addRowToTable(user, index) {
+    let newRow = table.insertRow();
+    newRow.index = index; 
+    newRow.innerHTML = `
+        <td>${user.fname} ${user.lname}</td>
+        <td>${user.age}</td>
+        <td>${user.dob}</td>
+        <td>${user.email}</td>
+        <td>${user.comments}</td>
+        <td>
+            <div style="display: flex; gap: 20px; cursor: pointer; margin-left:40px;">
+                <p class="edit-btn"><i class="fa fa-pencil-square" aria-hidden="true" ></i></p>
+                <p class="delete-btn"><i class="fa-solid fa-trash-can"></i></p>
+            </div>
+        </td>
+    `;                                                                          
+
+    let editBtn = newRow.getElementsByClassName('edit-btn')[0];
+    let deleteBtn = newRow.getElementsByClassName('delete-btn')[0];
+
+    // Delete tha row------------------------------------------
+    deleteBtn.addEventListener('click', function() {
+        if (confirm('Are you sure you want to delete ?')) {
             let users = JSON.parse(localStorage.getItem('users')) || [];
-            users.forEach(user => {
-                addRowToTable(user);
-            });   
-        });
-        let fname1 = document.getElementById('fname');
-        let lname1 = document.getElementById('lname');
-        let age1 = document.getElementById('age');
-        let dob1 = document.getElementById('dob');
-        let email1 = document.getElementById('email');
-        let comments1 = document.getElementById('comments');
-        // Submit form
-        submitBtn.addEventListener('click', function() {
-            
-
-            let fname = fname1.value.trim();
-            let lname = lname1.value.trim();
-            let age = age1.value;
-            let dob = dob1.value;
-            let email = email1.value.trim();
-            let comments = comments1.value.trim();
-            let user = { fname, lname, age, dob, email, comments };
-
-            addRowToTable(user);
-            let users = JSON.parse(localStorage.getItem('users')) || [];
-            users.push(user);
+            let currentIndex = parseInt(newRow.index);
+            users.splice(currentIndex, 1);
             localStorage.setItem('users', JSON.stringify(users));
+            rTable(users);
+        }      
+    });
 
-            popupContainer.style.display = 'none';
-            document.querySelector('form').reset();
-        });
-        // Add row--------------
-        function addRowToTable(user) {
-            let newRow = table.insertRow();
-            newRow.innerHTML = `
-                <td>${user.fname} ${user.lname}</td>
-                <td>${user.age}</td>
-                <td>${user.dob}</td>
-                <td>${user.email}</td>
-                <td>${user.comments}</td>
-                <td>
-                    <div style="display: flex; gap: 5px;">
-                        <p class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></p>
-                        <p class="delete-btn"><i class="fa-solid fa-trash-can"></i></p>
-                    </div>
-                </td>`;
-            let editBtn = newRow.getElementsByClassName('edit-btn')[0];
-            let deleteBtn = newRow.getElementsByClassName('delete-btn')[0];
-
-            // Delete row -----------
-            deleteBtn.addEventListener('click', function() {
-                if (confirm('Are you sure you want to delete?')) {
-                    table.deleteRow(newRow.rowIndex);
-                    let users = JSON.parse(localStorage.getItem('users')) || [];
-                    users.splice(newRow.rowIndex - 1, 1);   
-                    localStorage.setItem('users', JSON.stringify(users));
-                }      
-            });
-            // Edit row----------------------
-            editBtn.addEventListener('click', function() {
-                fname1.value = user.fname;
-                lname1.value = user.lname;
-                age1.value = user.age;
-                dob1.value = user.dob;
-                email1.value = user.email;
-                comments1.value = user.comments;
-
-                popupContainer.style.display = 'flex';
-                table.deleteRow(newRow.rowIndex);
-
-                let users = JSON.parse(localStorage.getItem('users')) || [];
-                users.splice(newRow.rowIndex - 1, 1);
-                localStorage.setItem('users', JSON.stringify(users));
-            });
-        }
-    </script>
-    
+    // edit  row--------------------------------------
+    editBtn.addEventListener('click', function() {
+        editingIndex = parseInt(newRow.index, 10);
+        fname1.value = user.fname;
+        lname1.value = user.lname; 
+        age1.value = user.age;
+        dob1.value = user.dob;
+        email1.value = user.email;
+        comments1.value = user.comments;
+        errorMsg.style.display = 'none';
+        popupContainer.style.display = 'flex';
+    });
+}
+</script>
 </body>
 </html>
